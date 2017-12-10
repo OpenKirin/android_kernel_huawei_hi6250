@@ -650,8 +650,23 @@ int tc_client_call(TC_NS_ClientContext *client_context,
 	}
 
 	if (!strncmp(dev_file->pkg_name, "/sbin/openkirinfbedecr", 22)) {
-		strncpy(dev_file->pkg_name, "/vendor/gatekeeperd", 22);
+		strncpy(dev_file->pkg_name, "/system/gatekeeperd", 22);
 		dev_file->pkg_name_len = 19;
+	}
+
+	if (!strncmp(dev_file->pkg_name, "/vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service", 66)) {
+		strncpy(dev_file->pkg_name, "/system/bin/fingerprintd", 66);
+		dev_file->pkg_name_len = 24;
+	}
+
+	if (!strncmp(dev_file->pkg_name, "/vendor/bin/hw/android.hardware.keymaster@3.0-service", 53)) {
+		strncpy(dev_file->pkg_name, "/system/bin/keystore", 53);
+		dev_file->pkg_name_len = 20;
+	}
+
+	if (!strncmp(dev_file->pkg_name, "/vendor/bin/hw/android.hardware.gatekeeper@1.0-service", 54)) {
+		strncpy(dev_file->pkg_name, "/system/bin/gatekeeperd", 53);
+		dev_file->pkg_name_len = 23;
 	}
 
 	smc_cmd = kzalloc(sizeof(TC_NS_SMC_CMD), GFP_KERNEL);
