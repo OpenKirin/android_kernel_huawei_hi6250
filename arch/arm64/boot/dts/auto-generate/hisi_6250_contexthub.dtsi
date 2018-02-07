@@ -1,0 +1,16 @@
+/{
+    contexthub: contexthub {
+        compatible = "hisilicon,contexthub_status";
+        status = "ok";
+    };
+    iomcu_subsys_config {
+        compatible = "hisilicon,iomcu_config";
+        clk_sel = <0x82003>;
+        cfg_div0 = <0x808000>;
+    };
+
+    hisi_ar:ar {
+	compatible = "hisilicon,hismart-ar";
+	status = "ok";
+    };
+};

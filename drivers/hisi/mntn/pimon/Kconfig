@@ -1,0 +1,5 @@
+config HISI_PIMON_MNTN
+    bool "pimon mntn module support"
+    default n
+    help
+      Say yes here to support the pimon mntn module.
